@@ -184,4 +184,4 @@ startBox.addEventListener('click', function (event) {
   hideStartBox();
 });
 },{"./style.scss":"91zb"}]},{},["Focm"], null)
-//# sourceMappingURL=https://takuyataniguchi.github.io/SequenceGame/dist/SequenceGame.db0e77e8.js.map
+//# sourceMappingURL=SequenceGame.db0e77e8.js.map

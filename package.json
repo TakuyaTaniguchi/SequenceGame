@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "parcel index.pug",
-    "build": "parcel build --no-minify index.pug --public-url https://takuyataniguchi.github.io/SequenceGame/dist/"
+    "build": "parcel build --no-minify index.pug --public-url ./"
   },
   "dependencies": {
     "parcel-bundler": "^1.12.3",
