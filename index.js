@@ -10,6 +10,9 @@ const stopBox = document.querySelector('.stopBox');
 const startBox = document.querySelector('.startBox');
 const moveBox = document.querySelector('.sequence_bar_movebox');
 const hitbox = document.querySelector('.sequence_bar_hitbox');
+const resultTextEl = document.querySelector('.result_text');
+
+
 
 //hitboxのサイズを取得
 const clearArea = hitbox.offsetLeft;
@@ -21,21 +24,23 @@ const changeMoveAction = () => {
 }
 
 const hideStopBox = () => {
-    startBox.style.display = "inline-block";
+    startBox.style.display = "block";
     event.target.style.display = "none";
 }
 
 const hideStartBox = () =>{
-    stopBox.style.display = "inline-block";
+    stopBox.style.display = "block";
     event.target.style.display = "none";
 }
 
-//moveBoxがclearArea,clearAreaEndのwidth内にある場合はtrueを返す。
+//moveBoxの成否判定
 const clearJudge　= (clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight) =>{
     if(clearArea <= moveBoxLeft && clearAreaEnd >= moveBoxLeft ){
-        return alert('Clear');
+        return true;
     }else if(clearArea <= moveBoxRight  && clearAreaEnd >= moveBoxRight  ){
-        return alert('Clear');
+        return true;
+    }else{
+        return false;
     }
 }
 
@@ -45,7 +50,12 @@ stopBox.addEventListener('click',(event)=>{
     //moveboxのサイズを取得
     const moveBoxLeft = moveBox.offsetLeft;
     const moveBoxRight = moveBox.offsetLeft + moveBox.clientWidth;
-    clearJudge(clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight);
+    const clearJudgeBool = clearJudge(clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight);
+    if(clearJudgeBool){
+        resultTextEl.textContent = 'Clear';
+    }else{
+        resultTextEl.textContent = 'Failed';
+    }
  });
 
 startBox.addEventListener('click',(event)=>{
