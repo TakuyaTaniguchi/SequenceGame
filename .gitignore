@@ -42,3 +42,4 @@ wp-content/themes/**/*.html
 **/dev/js/*.map
 **/dev/css/*.css
 **/wp-content/plugins/siteguard/really-simple-captcha/tmp/
+.DS_Store
