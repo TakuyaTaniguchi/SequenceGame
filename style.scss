@@ -1,0 +1,70 @@
+.area{
+    .sequence{
+      width: 500px;
+      height: 300px;
+      background-color: skyblue;
+      margin-top: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      &_bar{
+        width: 85%;
+        height: 30px;
+        display: block;
+        background-color: #E15A97;
+        margin-right: auto;
+        margin-left: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &_hitbox{
+          width: 20px;
+          height: 30px;
+          background-color: #fff;
+          display: block;
+          position: absolute;
+          left: 50%;
+        }
+        &_movebox{
+          width: 10px;
+          height: 30px;
+          background-color: red;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0%;
+          @extend .animation-movebox;
+          &.-is-stop{
+            animation-play-state: paused;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  .animation-movebox{
+      animation: movebox 5.2s ease alternate infinite .3s;
+  }
+  
+  @keyframes movebox {
+      0%{
+      left: 0%
+      }
+      100%{
+      left: 100%;
+      }
+  }
+  
+  .stopBox{
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: #ccc;
+  }
+  
+  .startBox{
+    display: inline-block;
+    padding: 5px 5px;
+    background-color: #ccc;
+  }

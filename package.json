@@ -1,15 +1,19 @@
 {
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "parcel index.pug",
+    "build": "parcel build index.pug"
   },
   "dependencies": {
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "pug": "^2.0.4"
   },
   "name": "SequenceGame",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/TakuyaTaniguchi/SequenceGame.git",
   "author": "ttaniguchi <ttaniguchi@oikaze.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.22.0"
+  }
 }
