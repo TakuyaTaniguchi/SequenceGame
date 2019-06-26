@@ -11,6 +11,7 @@ const startBox = document.querySelector('.startBox');
 const moveBox = document.querySelector('.sequence_bar_movebox');
 const hitbox = document.querySelector('.sequence_bar_hitbox');
 const resultTextEl = document.querySelector('.result_text');
+const score = document.querySelector('.score');
 let countStage = 1;
 
 
@@ -46,15 +47,16 @@ const clearJudge　= (clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight) =>{
 
 const nextStage = (countStage) => {
     let nextStageCount = countStage;
-    let prevStageCount = countStage - 1;
-    console.log(nextStageCount,prevStageCount)
     setTimeout(function(){
-        moveBox.classList.add('-stage2');
+        moveBox.classList.add(`-stage${nextStageCount}`);
+        score.textContent = `stage${nextStageCount}/10`;
     },1000)
 }
 
-const resetGame = () => {
+const resetGame = (countStage) => {
+    let prevStageCount = countStage - 1;
     resultTextEl.textContent = '';
+    moveBox.classList.remove(`-stage${prevStageCount}`);
 }
 
 stopBox.addEventListener('click',(event)=>{

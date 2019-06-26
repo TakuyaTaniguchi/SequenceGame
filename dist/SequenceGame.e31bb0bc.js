@@ -206,6 +206,7 @@ var startBox = document.querySelector('.startBox');
 var moveBox = document.querySelector('.sequence_bar_movebox');
 var hitbox = document.querySelector('.sequence_bar_hitbox');
 var resultTextEl = document.querySelector('.result_text');
+var score = document.querySelector('.score');
 var countStage = 1; //hitboxのサイズを取得
 
 var clearArea = hitbox.offsetLeft;
@@ -238,15 +239,16 @@ var clearJudge = function clearJudge(clearArea, clearAreaEnd, moveBoxLeft, moveB
 
 var nextStage = function nextStage(countStage) {
   var nextStageCount = countStage;
-  var prevStageCount = countStage - 1;
-  console.log(nextStageCount, prevStageCount);
   setTimeout(function () {
-    moveBox.classList.add('-stage2');
+    moveBox.classList.add("-stage".concat(nextStageCount));
+    score.textContent = "stage".concat(nextStageCount, "/10");
   }, 1000);
 };
 
-var resetGame = function resetGame() {
+var resetGame = function resetGame(countStage) {
+  var prevStageCount = countStage - 1;
   resultTextEl.textContent = '';
+  moveBox.classList.remove("-stage".concat(prevStageCount));
 };
 
 stopBox.addEventListener('click', function (event) {
