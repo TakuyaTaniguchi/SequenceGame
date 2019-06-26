@@ -2,11 +2,16 @@
 ----------------------- */
 @import '/soruce/reset.scss';
 .area{
+    width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #6699CC;
     .sequence{
-      width: 500px;
+      width: 100%;
+      max-width: 500px;
       padding: 50px 10px;
-      background-color: skyblue;
-      margin-top: 50px;
+      background-color: #6699CC;
       margin-left: auto;
       margin-right: auto;
       position: relative;
@@ -14,7 +19,7 @@
         width: 100%;
         height: 30px;
         display: block;
-        background-color: #E15A97;
+        background-color: #003366;
         margin-top: 35px;
         margin-right: auto;
         margin-left: auto;
@@ -69,13 +74,13 @@
   .stopBox{
     display: block;
     padding: 5px 5px;
-    background-color: #ccc;
+    background-color: #C0C0C0;
   }
   
   .startBox{
     display: block;
     padding: 5px 5px;
-    background-color: #ccc;
+    background-color: #C0C0C0;
   }
 
   .result{
