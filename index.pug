@@ -1,5 +1,11 @@
 html
     head
         body
-            script(src="./index.js")
-            p HOGE
+            .area
+                .sequence
+                    .sequence_bar
+                        .sequence_bar_hitbox
+                        .sequence_bar_movebox
+                    .stopBox STOP!!!
+                    .startBox(style="display:none") START!!!
+                    script(src="./index.js")
