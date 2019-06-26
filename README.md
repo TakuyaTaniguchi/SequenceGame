@@ -1,5 +1,7 @@
 # SequenceGame
 
+##
+page: [https://takuyataniguchi.github.io/SequenceGame/dist](https://takuyataniguchi.github.io/SequenceGame/dist)
 ## build
 
 ```
