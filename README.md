@@ -10,4 +10,4 @@ yarn build
 ```
 
 ## demo(まだまだ作りかけ)  
-<img src="./soruce/demo.gif">
+<img src="./soruce/game.png">
