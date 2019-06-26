@@ -182,14 +182,29 @@ input[type=submit], input[type=text], textarea {
   left: 0%;
 }
 .area .sequence_bar_movebox.-is-stop {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
 
-.animation-movebox, .area .sequence_bar_movebox {
+/*
+* mova-box pattern
+*/
+.animation-movebox, .area .sequence_bar_movebox.-stage1 {
   animation: movebox 5.2s ease alternate infinite 0.3s;
 }
 
 @keyframes movebox {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: calc(100% - 10px);
+  }
+}
+.animation-movebox2, .area .sequence_bar_movebox.-stage1.-stage2 {
+  animation: movebox 5.2s cubic-bezier(0.45, 0.19, 0.17, 1) alternate infinite 0.3s;
+}
+
+@keyframes movebox2 {
   0% {
     left: 0%;
   }

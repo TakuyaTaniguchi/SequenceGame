@@ -205,7 +205,8 @@ var stopBox = document.querySelector('.stopBox');
 var startBox = document.querySelector('.startBox');
 var moveBox = document.querySelector('.sequence_bar_movebox');
 var hitbox = document.querySelector('.sequence_bar_hitbox');
-var resultTextEl = document.querySelector('.result_text'); //hitboxのサイズを取得
+var resultTextEl = document.querySelector('.result_text');
+var countStage = 1; //hitboxのサイズを取得
 
 var clearArea = hitbox.offsetLeft;
 var clearAreaEnd = hitbox.offsetLeft + hitbox.clientWidth; //moveboxをスタート,ストップする。
@@ -235,6 +236,19 @@ var clearJudge = function clearJudge(clearArea, clearAreaEnd, moveBoxLeft, moveB
   }
 };
 
+var nextStage = function nextStage(countStage) {
+  var nextStageCount = countStage;
+  var prevStageCount = countStage - 1;
+  console.log(nextStageCount, prevStageCount);
+  setTimeout(function () {
+    moveBox.classList.add('-stage2');
+  }, 1000);
+};
+
+var resetGame = function resetGame() {
+  resultTextEl.textContent = '';
+};
+
 stopBox.addEventListener('click', function (event) {
   changeMoveAction();
   hideStopBox(); //moveboxのサイズを取得
@@ -245,6 +259,11 @@ stopBox.addEventListener('click', function (event) {
 
   if (clearJudgeBool) {
     resultTextEl.textContent = 'Clear';
+    countStage++;
+    setTimeout(function () {
+      resetGame(countStage);
+      nextStage(countStage);
+    }, 1000);
   } else {
     resultTextEl.textContent = 'Failed';
   }
@@ -281,7 +300,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60057" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59653" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

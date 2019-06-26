@@ -40,9 +40,14 @@
           position: absolute;
           top: 0;
           left: 0%;
-          @extend .animation-movebox;
+          &.-stage1{
+            @extend .animation-movebox;
+            &.-stage2{
+              @extend .animation-movebox2;
+            }
+          }
           &.-is-stop{
-            animation-play-state: paused;
+            animation-play-state: paused !important;
           }
         }
       }
@@ -50,10 +55,12 @@
   }
   
   
+  /*
+  * mova-box pattern
+  */
   .animation-movebox{
       animation: movebox 5.2s ease alternate infinite .3s;
   }
-  
   @keyframes movebox {
       0%{
       left: 0%
@@ -62,6 +69,20 @@
       left: calc(100% - 10px);
       }
   }
+
+  .animation-movebox2{
+      animation: movebox 5.2s cubic-bezier(0.450, 0.190, 0.170, 1) alternate infinite .3s;
+  }
+  @keyframes movebox2 {
+      0%{
+      left: 0%
+      }
+      100%{
+      left: calc(100% - 10px);
+      }
+  }
+
+
   .box{
     cursor: pointer;
     text-align: center;

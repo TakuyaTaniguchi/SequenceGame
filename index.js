@@ -11,7 +11,7 @@ const startBox = document.querySelector('.startBox');
 const moveBox = document.querySelector('.sequence_bar_movebox');
 const hitbox = document.querySelector('.sequence_bar_hitbox');
 const resultTextEl = document.querySelector('.result_text');
-
+let countStage = 1;
 
 
 //hitboxのサイズを取得
@@ -44,6 +44,19 @@ const clearJudge　= (clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight) =>{
     }
 }
 
+const nextStage = (countStage) => {
+    let nextStageCount = countStage;
+    let prevStageCount = countStage - 1;
+    console.log(nextStageCount,prevStageCount)
+    setTimeout(function(){
+        moveBox.classList.add('-stage2');
+    },1000)
+}
+
+const resetGame = () => {
+    resultTextEl.textContent = '';
+}
+
 stopBox.addEventListener('click',(event)=>{
     changeMoveAction();
     hideStopBox();
@@ -53,9 +66,16 @@ stopBox.addEventListener('click',(event)=>{
     const clearJudgeBool = clearJudge(clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight);
     if(clearJudgeBool){
         resultTextEl.textContent = 'Clear';
+        countStage++;
+        setTimeout(function(){
+            resetGame(countStage);
+            nextStage(countStage);
+        },1000)
     }else{
         resultTextEl.textContent = 'Failed';
     }
+
+    
  });
 
 startBox.addEventListener('click',(event)=>{
