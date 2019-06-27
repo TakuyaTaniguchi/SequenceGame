@@ -11,5 +11,5 @@ or
 yarn build
 ```
 
-## demo(まだまだ作りかけ)  
+## demo(まだまだstage2までしか無い)  
 <img src="./soruce/game.png">
