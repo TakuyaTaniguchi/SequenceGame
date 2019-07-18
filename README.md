@@ -1,4 +1,4 @@
-# SequenceGame
+# ProgressbarGame
 https://progressbar-game.netlify.com/
 
 ## build
