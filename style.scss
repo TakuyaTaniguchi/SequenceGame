@@ -59,7 +59,7 @@ body{
 
 .area{
     width: 90%;
-    margin: 280px 0;
+    margin: 250px 0;
     padding: 100px 0;
     margin-left: auto;
     margin-right: auto;
@@ -181,20 +181,26 @@ body{
     text-align: center;
     width: 100%;
     max-width: 250px;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
   }
   .stopBox{
     display: block;
-    padding: 5px 5px;
+    padding: 15px 0;
     background-color: #C0C0C0;
+    border: solid #003366;
+    border-radius: 10px;
+
   }
   
   .startBox{
     display: block;
-    padding: 5px 5px;
+    padding: 15px 0;
     background-color: #C0C0C0;
+    border: solid #003366;
+    border-radius: 10px;
+
   }
 
   .result{
