@@ -139,6 +139,7 @@ input[type=submit], input[type=text], textarea {
 body {
   background-color: #00818a;
   font-family: "Shojumaru", cursive;
+  background-color: #003366;
   border-left: solid 50px #f7be16;
   border-right: solid 50px #f7be16;
 }
@@ -199,7 +200,7 @@ body {
   margin: 280px 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: #6699CC;
+  background-color: #f7be16;
 }
 .area.-is-stop .sequence_bar_movebox {
   animation-play-state: paused !important;
@@ -207,7 +208,6 @@ body {
 .area .sequence {
   width: 100%;
   max-width: 500px;
-  background-color: #6699CC;
   margin-left: auto;
   margin-right: auto;
   position: relative;
