@@ -1,7 +1,6 @@
-# SequenceGame
+# ProgressbarGame
+https://progressbar-game.netlify.com/
 
-##
-page: [https://takuyataniguchi.github.io/SequenceGame/dist](https://takuyataniguchi.github.io/SequenceGame/dist)
 ## build
 
 ```
@@ -11,5 +10,5 @@ or
 yarn build
 ```
 
-## demo(まだまだ作りかけ)  
+## demo(まだまだstage2までしか無い)  
 <img src="./soruce/game.png">
