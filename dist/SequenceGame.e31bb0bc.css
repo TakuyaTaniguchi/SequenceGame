@@ -196,9 +196,23 @@ body {
 .icon-gear {
   position: absolute;
   width: 120px;
+  animation: spin 1.7s linear infinite;
+}
+.icon-gear.-is-lt {
   top: 12px;
   left: -20px;
-  animation: spin 1.7s linear infinite;
+}
+.icon-gear.-is-lb {
+  bottom: 12px;
+  left: -20px;
+}
+.icon-gear.-is-rt {
+  top: 12px;
+  right: -20px;
+}
+.icon-gear.-is-rb {
+  bottom: 12px;
+  right: -20px;
 }
 
 @keyframes spin {

@@ -60,9 +60,23 @@ body{
 .icon-gear{
   position: absolute;
   width: 120px;
-  top: 12px;
-  left: -20px;
   animation: spin 1.7s linear infinite;
+  &.-is-lt{
+    top: 12px;
+    left: -20px;
+  }
+  &.-is-lb{
+    bottom: 12px;
+    left: -20px;
+  }
+  &.-is-rt{
+    top: 12px;
+    right: -20px;
+  }
+  &.-is-rb{
+    bottom: 12px;
+    right: -20px;
+  }
 }
 
 @keyframes spin {
@@ -161,8 +175,6 @@ body{
       font-size: 36px;
     }
   }
-  
-  
   /*
   * mova-box pattern
   */
