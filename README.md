@@ -10,5 +10,10 @@ or
 yarn build
 ```
 
-## demo(まだまだstage2までしか無い)  
+## Description
+in Development
+
+赤いバーが白いエリアと重なるとクリア  
+全部で10ステージあります。  
+CSSアニメーションの勉強のために作りました。  
 <img src="./soruce/game.png">
