@@ -6,12 +6,13 @@ import "./style.scss";
 /**
  * JavaScript
  */
-const stopBox = document.querySelector('.stopBox');
-const startBox = document.querySelector('.startBox');
-const moveBox = document.querySelector('.sequence_bar_movebox');
-const hitbox = document.querySelector('.sequence_bar_hitbox');
-const resultTextEl = document.querySelector('.result_text');
-const score = document.querySelector('.score');
+const area = document.querySelector('.area');
+const stopBox = area.querySelector('.stopBox');
+const startBox = area.querySelector('.startBox');
+const moveBox = area.querySelector('.sequence_bar_movebox');
+const hitbox = area.querySelector('.sequence_bar_hitbox');
+const resultTextEl = area.querySelector('.result_text');
+const score = area.querySelector('.score');
 let countStage = 1;
 
 
@@ -21,7 +22,7 @@ const clearAreaEnd = hitbox.offsetLeft + hitbox.clientWidth;
 
 //moveboxをスタート,ストップする。
 const changeMoveAction = () => {
-    moveBox.classList.toggle('-is-stop');
+    area.classList.toggle('-is-stop');
 }
 
 const hideStopBox = () => {
@@ -36,9 +37,7 @@ const hideStartBox = () =>{
 
 //moveBoxの成否判定
 const clearJudge　= (clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight) =>{
-    if(clearArea <= moveBoxLeft && clearAreaEnd >= moveBoxLeft ){
-        return true;
-    }else if(clearArea <= moveBoxRight  && clearAreaEnd >= moveBoxRight  ){
+    if(clearArea <= moveBoxLeft && clearAreaEnd >= moveBoxLeft || clearArea <= moveBoxRight  && clearAreaEnd >= moveBoxRight){
         return true;
     }else{
         return false;
@@ -48,7 +47,7 @@ const clearJudge　= (clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight) =>{
 const nextStage = (countStage) => {
     let nextStageCount = countStage;
     setTimeout(function(){
-        moveBox.classList.add(`-stage${nextStageCount}`);
+        area.classList.add(`-stage${nextStageCount}`);
         score.textContent = `stage${nextStageCount}/10`;
     },1000)
 }
@@ -56,7 +55,7 @@ const nextStage = (countStage) => {
 const resetGame = (countStage) => {
     let prevStageCount = countStage - 1;
     resultTextEl.textContent = '';
-    moveBox.classList.remove(`-stage${prevStageCount}`);
+    area.classList.remove(`-stage${prevStageCount}`);
 }
 
 stopBox.addEventListener('click',(event)=>{
@@ -76,8 +75,6 @@ stopBox.addEventListener('click',(event)=>{
     }else{
         resultTextEl.textContent = 'Failed';
     }
-
-    
  });
 
 startBox.addEventListener('click',(event)=>{

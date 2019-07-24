@@ -201,19 +201,20 @@ require("./style.scss");
 /**
  * JavaScript
  */
-var stopBox = document.querySelector('.stopBox');
-var startBox = document.querySelector('.startBox');
-var moveBox = document.querySelector('.sequence_bar_movebox');
-var hitbox = document.querySelector('.sequence_bar_hitbox');
-var resultTextEl = document.querySelector('.result_text');
-var score = document.querySelector('.score');
+var area = document.querySelector('.area');
+var stopBox = area.querySelector('.stopBox');
+var startBox = area.querySelector('.startBox');
+var moveBox = area.querySelector('.sequence_bar_movebox');
+var hitbox = area.querySelector('.sequence_bar_hitbox');
+var resultTextEl = area.querySelector('.result_text');
+var score = area.querySelector('.score');
 var countStage = 1; //hitboxのサイズを取得
 
 var clearArea = hitbox.offsetLeft;
 var clearAreaEnd = hitbox.offsetLeft + hitbox.clientWidth; //moveboxをスタート,ストップする。
 
 var changeMoveAction = function changeMoveAction() {
-  moveBox.classList.toggle('-is-stop');
+  area.classList.toggle('-is-stop');
 };
 
 var hideStopBox = function hideStopBox() {
@@ -228,9 +229,7 @@ var hideStartBox = function hideStartBox() {
 
 
 var clearJudge = function clearJudge(clearArea, clearAreaEnd, moveBoxLeft, moveBoxRight) {
-  if (clearArea <= moveBoxLeft && clearAreaEnd >= moveBoxLeft) {
-    return true;
-  } else if (clearArea <= moveBoxRight && clearAreaEnd >= moveBoxRight) {
+  if (clearArea <= moveBoxLeft && clearAreaEnd >= moveBoxLeft || clearArea <= moveBoxRight && clearAreaEnd >= moveBoxRight) {
     return true;
   } else {
     return false;
@@ -240,7 +239,7 @@ var clearJudge = function clearJudge(clearArea, clearAreaEnd, moveBoxLeft, moveB
 var nextStage = function nextStage(countStage) {
   var nextStageCount = countStage;
   setTimeout(function () {
-    moveBox.classList.add("-stage".concat(nextStageCount));
+    area.classList.add("-stage".concat(nextStageCount));
     score.textContent = "stage".concat(nextStageCount, "/10");
   }, 1000);
 };
@@ -248,7 +247,7 @@ var nextStage = function nextStage(countStage) {
 var resetGame = function resetGame(countStage) {
   var prevStageCount = countStage - 1;
   resultTextEl.textContent = '';
-  moveBox.classList.remove("-stage".concat(prevStageCount));
+  area.classList.remove("-stage".concat(prevStageCount));
 };
 
 stopBox.addEventListener('click', function (event) {
@@ -302,7 +301,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59653" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55551" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

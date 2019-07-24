@@ -1,12 +1,87 @@
+@import '/soruce/reset.scss';
+body{
+  background-color: #00818a;
+}
+/* header
+----------------------- */
+.header{
+  display: block;
+  background-color: #f7be16;
+  &_inner{
+    padding: 25px 0;
+  }
+  &_title{
+    color: #293462;
+    text-align: center;
+  }
+}
+
+/* footer
+----------------------- */
+.footer{
+  display: block;
+  background-color: #f7be16;
+  &_inner{
+    position: relative;
+    padding: 25px 0;
+  }
+  &_title{
+    color: #293462;
+    text-align: center;
+  }
+}
+
+/* listSns
+----------------------- */
+.listSns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 115px;
+  margin-left: auto;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  &_item{
+    width: 40px;
+    min-width: 40px;
+    a{
+      display: block;
+    }
+  }
+}
 /* base
 ----------------------- */
-@import '/soruce/reset.scss';
+
 .area{
     width: 90%;
-    margin-top: 50px;
+    margin: 280px 0;
     margin-left: auto;
     margin-right: auto;
     background-color: #6699CC;
+     &.-stage1{
+        .sequence_bar_movebox{
+          @extend .animation-movebox;
+        }
+    }
+    &.-stage2{
+      .sequence_bar_movebox{
+        @extend .animation-movebox2;
+      }
+    }
+    &.-stage3{
+      .sequence_bar_movebox{
+        @extend .animation-movebox2;
+      }
+      .sequence_bar{
+        @extend .animation-mova-sequence_bar-3;
+      }
+    }
+    &.-is-stop{
+      .sequence_bar_movebox{
+        animation-play-state: paused !important;
+      }
+    }
     .sequence{
       width: 100%;
       max-width: 500px;
@@ -23,6 +98,7 @@
         margin-right: auto;
         margin-left: auto;
         position: relative;
+        // @extend .animation-mova-sequence_bar-3;
         &_hitbox{
           width: 20px;
           height: 30px;
@@ -39,15 +115,6 @@
           position: absolute;
           top: 0;
           left: 0%;
-          &.-stage1{
-            @extend .animation-movebox;
-          }
-          &.-stage2{
-            @extend .animation-movebox2;
-          }
-          &.-is-stop{
-            animation-play-state: paused !important;
-          }
         }
       }
     }
@@ -82,6 +149,25 @@
       }
       100%{
       left: calc(100% - 10px);
+      }
+  }
+
+  /*
+  * mova-sequence_bar pattern
+  */
+
+  .animation-mova-sequence_bar-3{
+      animation: mova-sequence_bar-3 5.2s cubic-bezier(0.450, 0.190, 0.170, 1) alternate infinite .3s;
+  }
+  @keyframes mova-sequence_bar-3 {
+      0%{
+      left: 0%
+      }
+      50%{
+        left: calc(-100%);
+      }
+      100%{
+      left: calc(100%);
       }
   }
 
