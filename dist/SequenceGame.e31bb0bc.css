@@ -140,8 +140,6 @@ body {
   background-color: #00818a;
   font-family: "Shojumaru", cursive;
   background-color: #003366;
-  border-left: solid 50px #f7be16;
-  border-right: solid 50px #f7be16;
 }
 
 /* header
@@ -149,6 +147,7 @@ body {
 .header {
   display: block;
   background-color: #f7be16;
+  position: relative;
 }
 .header_inner {
   padding: 25px 0;
@@ -163,6 +162,7 @@ body {
 .footer {
   display: block;
   background-color: #f7be16;
+  position: relative;
 }
 .footer_inner {
   position: relative;
@@ -173,13 +173,49 @@ body {
   text-align: center;
 }
 
+/* sidebar
+----------------------- */
+.sidebar {
+  height: 100%;
+  position: absolute;
+  display: block;
+  width: 50px;
+  background-color: #f7be16;
+}
+.sidebar.-is-left {
+  left: 0;
+  top: 0;
+}
+.sidebar.-is-right {
+  right: 0;
+  top: 0;
+}
+
+/* gear
+----------------------- */
+.icon-gear {
+  position: absolute;
+  width: 120px;
+  top: 12px;
+  left: -20px;
+  animation: spin 1.7s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 /* listSns
 ----------------------- */
 .listSns {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 115px;
+  width: 100px;
   margin-left: auto;
   position: absolute;
   top: 25px;
@@ -196,7 +232,7 @@ body {
 /* base
 ----------------------- */
 .area {
-  width: 90%;
+  width: 80%;
   margin: 250px 0;
   padding: 100px 0;
   margin-left: auto;
@@ -284,10 +320,10 @@ body {
     left: 0%;
   }
   50% {
-    left: calc(-100%);
+    left: calc(-80%);
   }
   100% {
-    left: calc(100%);
+    left: calc(80%);
   }
 }
 .box {
