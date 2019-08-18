@@ -55,33 +55,11 @@ body{
   }
 }
 
-/* gear
+/* content
 ----------------------- */
-.icon-gear{
-  position: absolute;
-  width: 120px;
-  animation: spin 1.7s linear infinite;
-  &.-is-lt{
-    top: 12px;
-    left: -20px;
-  }
-  &.-is-lb{
-    bottom: 12px;
-    left: -20px;
-  }
-  &.-is-rt{
-    top: 12px;
-    right: -20px;
-  }
-  &.-is-rb{
-    bottom: 12px;
-    right: -20px;
-  }
-}
 
-@keyframes spin {
-	0% {transform: rotate(0deg);}
-	100% {transform: rotate(-360deg);}
+.content{
+  height: calc(100vh - 264px);
 }
 
 /* listSns
@@ -106,8 +84,7 @@ body{
 
 .area{
     width: 80%;
-    margin: 250px 0;
-    padding: 100px 0;
+    padding: 20px 0;
     margin-left: auto;
     margin-right: auto;
     background-color: #f7be16;
@@ -124,9 +101,6 @@ body{
     &.-stage3{
       .sequence_bar_movebox{
         @extend .animation-movebox2;
-      }
-      .sequence_bar{
-        @extend .animation-mova-sequence_bar-3;
       }
     }
     &.-is-stop{
@@ -200,32 +174,12 @@ body{
       }
   }
 
-  /*
-  * mova-sequence_bar pattern
-  */
-
-  .animation-mova-sequence_bar-3{
-      animation: mova-sequence_bar-3 5.2s cubic-bezier(0.450, 0.190, 0.170, 1) alternate infinite .3s;
-  }
-  @keyframes mova-sequence_bar-3 {
-      0%{
-      left: 0%
-      }
-      50%{
-        left: calc(-80%);
-      }
-      100%{
-      left: calc(80%);
-      }
-  }
-
-
   .box{
     cursor: pointer;
     text-align: center;
     width: 100%;
     max-width: 250px;
-    margin-top: 50px;
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
   }

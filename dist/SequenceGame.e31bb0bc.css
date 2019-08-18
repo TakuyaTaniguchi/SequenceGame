@@ -191,38 +191,12 @@ body {
   top: 0;
 }
 
-/* gear
+/* content
 ----------------------- */
-.icon-gear {
-  position: absolute;
-  width: 120px;
-  animation: spin 1.7s linear infinite;
-}
-.icon-gear.-is-lt {
-  top: 12px;
-  left: -20px;
-}
-.icon-gear.-is-lb {
-  bottom: 12px;
-  left: -20px;
-}
-.icon-gear.-is-rt {
-  top: 12px;
-  right: -20px;
-}
-.icon-gear.-is-rb {
-  bottom: 12px;
-  right: -20px;
+.content {
+  height: calc(100vh - 264px);
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
 /* listSns
 ----------------------- */
 .listSns {
@@ -245,8 +219,7 @@ body {
 ----------------------- */
 .area {
   width: 80%;
-  margin: 250px 0;
-  padding: 100px 0;
+  padding: 20px 0;
   margin-left: auto;
   margin-right: auto;
   background-color: #f7be16;
@@ -320,30 +293,12 @@ body {
     left: calc(100% - 10px);
   }
 }
-/*
-* mova-sequence_bar pattern
-*/
-.animation-mova-sequence_bar-3, .area.-stage3 .sequence_bar {
-  animation: mova-sequence_bar-3 5.2s cubic-bezier(0.45, 0.19, 0.17, 1) alternate infinite 0.3s;
-}
-
-@keyframes mova-sequence_bar-3 {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: calc(-80%);
-  }
-  100% {
-    left: calc(80%);
-  }
-}
 .box {
   cursor: pointer;
   text-align: center;
   width: 100%;
   max-width: 250px;
-  margin-top: 50px;
+  margin-top: 15px;
   margin-left: auto;
   margin-right: auto;
 }

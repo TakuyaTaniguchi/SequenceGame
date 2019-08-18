@@ -3,7 +3,7 @@ html
         meta#viewport(content='width=device-width', name='viewport')
         <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
         body
-            .content
+            .main
                 //- img.icon-gear.-is-lt(src='./img/icon-gear.png', alt='歯車 ')
                 //- img.icon-gear.-is-lb(src='./img/icon-gear.png', alt='歯車')
                 //- img.icon-gear.-is-rt(src='./img/icon-gear.png', alt='歯車')
@@ -13,24 +13,27 @@ html
                         h1.header_title ProgressbarGame
                 .sidebar.-is-left
                 .sidebar.-is-right
-                .area.-stage1
-                    .score stage 1/10
-                    .sequence
-                        .result
-                            .result_text
-                        .sequence_bar
-                            .sequence_bar_hitbox
-                            .sequence_bar_movebox
-                        .box
-                            .stopBox STOP!!!
-                            .startBox(style="display:none") START!!!
+                .content
+                    .content_inner
+                        p 中身
                 footer.footer
-                    .footer_inner
-                        h1.footer_title ProgressbarGame
-                        ul.listSns
-                            li.listSns_item
-                                a(href='https://twitter.com/RinstarskyKujat', target='_blank') Twitter
-                            li.listSns_item
-                                a(href='https://github.com/TakuyaTaniguchi/SequenceGame', target='_blank') Github
+                    .area.-stage1
+                        .score stage 1/10
+                        .sequence
+                            .result
+                                .result_text
+                            .sequence_bar
+                                .sequence_bar_hitbox
+                                .sequence_bar_movebox
+                            .box
+                                .stopBox STOP!!!
+                                .startBox(style="display:none") START!!!
+                    //- .footer_inner
+                    //-     h1.footer_title ProgressbarGame
+                    //-     ul.listSns
+                    //-         li.listSns_item
+                    //-             a(href='https://twitter.com/RinstarskyKujat', target='_blank') Twitter
+                    //-         li.listSns_item
+                    //-             a(href='https://github.com/TakuyaTaniguchi/SequenceGame', target='_blank') Github
 
             script(src="./index.js")
