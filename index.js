@@ -13,6 +13,7 @@ const moveBox = area.querySelector('.sequence_bar_movebox');
 const hitbox = area.querySelector('.sequence_bar_hitbox');
 const resultTextEl = area.querySelector('.result_text');
 const score = area.querySelector('.score');
+const jsContent = document.querySelector('.js-content')
 let countStage = 1;
 
 
@@ -56,6 +57,8 @@ const resetGame = (countStage) => {
     let prevStageCount = countStage - 1;
     resultTextEl.textContent = '';
     area.classList.remove(`-stage${prevStageCount}`);
+    //aaa
+    jsContent.classList.remove('-is-clear')
 }
 
 stopBox.addEventListener('click',(event)=>{
@@ -67,6 +70,9 @@ stopBox.addEventListener('click',(event)=>{
     const clearJudgeBool = clearJudge(clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight);
     if(clearJudgeBool){
         resultTextEl.textContent = 'Clear';
+        //aaaaa
+        jsContent.classList.add('-is-clear')
+
         countStage++;
         setTimeout(function(){
             resetGame(countStage);

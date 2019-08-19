@@ -194,6 +194,9 @@ body {
 /* content
 ----------------------- */
 .content {
+  width: calc(100% - 100px);
+  margin-left: auto;
+  margin-right: auto;
   height: calc(100vh - 264px);
 }
 
