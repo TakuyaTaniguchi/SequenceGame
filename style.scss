@@ -1,4 +1,5 @@
 @import '/soruce/reset.scss';
+@import './asset/stage1';
 body{
   background-color: #00818a;
   font-family: 'Shojumaru', cursive;
@@ -62,7 +63,7 @@ body{
   width: calc(100% - 100px);
   margin-left: auto;
   margin-right: auto;
-  height: calc(100vh - 264px);
+  height: calc(100vh - 400px);
 }
 
 /* listSns

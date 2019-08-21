@@ -242,7 +242,7 @@ var nextStage = function nextStage(countStage) {
   setTimeout(function () {
     area.classList.add("-stage".concat(nextStageCount));
     score.textContent = "stage".concat(nextStageCount, "/10");
-  }, 1000);
+  }, 1500);
 };
 
 var resetGame = function resetGame(countStage) {
@@ -306,7 +306,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62174" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65275" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

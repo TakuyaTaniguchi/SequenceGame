@@ -50,7 +50,7 @@ const nextStage = (countStage) => {
     setTimeout(function(){
         area.classList.add(`-stage${nextStageCount}`);
         score.textContent = `stage${nextStageCount}/10`;
-    },1000)
+    },1500)
 }
 
 const resetGame = (countStage) => {
