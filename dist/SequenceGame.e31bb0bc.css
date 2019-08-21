@@ -139,21 +139,21 @@ input[type=submit], input[type=text], textarea {
 body {
   background-color: #00818a;
   font-family: "Shojumaru", cursive;
-  background-color: #003366;
+  background-color: #F8FFE8;
 }
 
 /* header
 ----------------------- */
 .header {
   display: block;
-  background-color: #f7be16;
+  background-color: #59C3C3;
   position: relative;
 }
 .header_inner {
   padding: 25px 0;
 }
 .header_title {
-  color: #293462;
+  color: #F8FFE8;
   text-align: center;
 }
 
@@ -161,7 +161,7 @@ body {
 ----------------------- */
 .footer {
   display: block;
-  background-color: #f7be16;
+  background-color: #59C3C3;
   position: relative;
 }
 .footer_inner {
@@ -169,7 +169,7 @@ body {
   padding: 25px 0;
 }
 .footer_title {
-  color: #293462;
+  color: #F8FFE8;
   text-align: center;
 }
 
@@ -180,7 +180,7 @@ body {
   position: absolute;
   display: block;
   width: 50px;
-  background-color: #f7be16;
+  background-color: #59C3C3;
 }
 .sidebar.-is-left {
   left: 0;
@@ -225,7 +225,7 @@ body {
   padding: 20px 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: #f7be16;
+  background-color: #59C3C3;
 }
 .area.-is-stop .sequence_bar_movebox {
   animation-play-state: paused !important;

@@ -2,21 +2,21 @@
 body{
   background-color: #00818a;
   font-family: 'Shojumaru', cursive;
-  background-color: #003366;
-  // border-left: solid 50px #f7be16;
-  // border-right: solid 50px #f7be16;
+  background-color: #F8FFE8;
+  // border-left: solid 50px #59C3C3;
+  // border-right: solid 50px #59C3C3;
 }
 /* header
 ----------------------- */
 .header{
   display: block;
-  background-color: #f7be16;
+  background-color: #59C3C3;
   position: relative;
   &_inner{
     padding: 25px 0;
   }
   &_title{
-    color: #293462;
+    color: #F8FFE8;
     text-align: center;
   }
 }
@@ -25,14 +25,14 @@ body{
 ----------------------- */
 .footer{
   display: block;
-  background-color: #f7be16;
+  background-color: #59C3C3;
   position: relative;
   &_inner{
     position: relative;
     padding: 25px 0;
   }
   &_title{
-    color: #293462;
+    color: #F8FFE8;
     text-align: center;
   }
 }
@@ -44,7 +44,7 @@ body{
   position: absolute;
   display: block;
   width: 50px;
-  background-color: #f7be16;
+  background-color: #59C3C3;
   &.-is-left{
     left: 0;
     top: 0;
@@ -90,7 +90,7 @@ body{
     padding: 20px 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: #f7be16;
+    background-color: #59C3C3;
      &.-stage1{
         .sequence_bar_movebox{
           @extend .animation-movebox;
