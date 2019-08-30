@@ -136,69 +136,128 @@ input[type=submit], input[type=text], textarea {
   *zoom: 1;
 }
 
-.circle {
-  position: relative;
-  margin-top: 100px;
+.stage2 {
+  transition: all 0.6s;
+}
+.stage2 .circle {
   margin-left: auto;
   margin-right: auto;
-  width: 200px;
+  width: 100px;
   height: 200px;
   line-height: 200px;
-  border-radius: 50%;
-  border: 4px solid;
-  text-align: center;
+  border-radius: 99px;
   color: orange;
+  border: 30px double;
+  border-top: 0;
+  border-bottom: 0;
 }
-.circle.-is-second {
+.stage2 .circle.-is-second {
   color: #0198F1;
+  margin: 0 auto;
   position: absolute;
-  top: 45px;
-  margin-left: 145px;
-  margin-right: auto;
+  width: 80px;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.6s;
 }
-.circle.-is-third {
-  color: #FB623A;
+.stage2 .circle.-is-third {
+  color: #D62226;
+  margin: 0 auto;
   position: absolute;
-  top: 45px;
-  margin-left: 900px;
-  margin-right: auto;
+  width: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.6s;
 }
 
-.ball {
-  width: 196px;
-  height: 196px;
-  position: absolute;
-  top: 22px;
-  left: -1px;
-  line-height: 196px;
-  border-radius: 50%;
-  text-align: center;
-  color: orange;
-  background-color: orange;
-  transition: all 0.5s;
-}
-.ball.-is-second {
-  top: -22px;
-  color: #0198F1;
-  background-color: #0198F1;
-  margin-right: auto;
-}
-.ball.-is-third {
-  top: -22px;
-  color: #FB623A;
-  background-color: #FB623A;
-  margin-left: auto;
+/*
+* mova-box pattern
+*/
+.animation-geometry, .stage2 .circle {
+  animation: geometry 0.8s ease alternate infinite 0.3s;
 }
 
-.js-content.-is-clear .ball {
-  top: -1px;
-  transition: all 0.5s;
+@keyframes geometry {
+  0% {
+    width: 100px;
+  }
+  100% {
+    width: 200px;
+  }
+}
+.animation-geometry-second, .stage2 .circle.-is-second {
+  animation: geometry-second 0.5s ease alternate infinite 0.3s;
+}
+
+@keyframes geometry-second {
+  0% {
+    width: 80px;
+  }
+  100% {
+    width: 125px;
+  }
+}
+.animation-geometry-third, .stage2 .circle.-is-third {
+  animation: geometry-third 1s ease alternate infinite 0.3s;
+}
+
+@keyframes geometry-third {
+  0% {
+    width: 50px;
+  }
+  100% {
+    width: 75px;
+  }
+}
+.js-content.-is-clear .stage2 {
+  transition: all 0.6s;
+}
+.js-content.-is-clear .stage2 .circle {
+  width: 200px;
+  transition: all 0.6s;
+}
+.js-content.-is-clear .stage2 .circle.-is-second {
+  width: 125px;
+  transition: all 0.6s;
+}
+.js-content.-is-clear .stage2 .circle.-is-third {
+  width: 75px;
+  transition: all 0.6s;
 }
 
 body {
   background-color: #00818a;
   font-family: "Shojumaru", cursive;
   background-color: #F8FFE8;
+}
+
+.overlay {
+  position: relative;
+}
+.overlay.-is-clear::before {
+  content: "CLEAR!!!";
+  display: block;
+  font-size: 100px;
+  opacity: 1;
+  z-index: 1;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay.-is-clear::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  background-color: #000;
 }
 
 /* header
@@ -253,10 +312,12 @@ body {
 /* content
 ----------------------- */
 .content {
+  display: flex;
+  align-items: center;
   width: calc(100% - 100px);
   margin-left: auto;
   margin-right: auto;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 160px);
 }
 
 /* listSns
@@ -331,23 +392,11 @@ body {
 /*
 * mova-box pattern
 */
-.animation-movebox, .area.-stage1 .sequence_bar_movebox {
-  animation: movebox 5.2s ease alternate infinite 0.3s;
+.animation-movebox, .area.-stage1 .sequence_bar_movebox, .area.-stage2 .sequence_bar_movebox, .area.-stage3 .sequence_bar_movebox {
+  animation: movebox 2s ease alternate infinite 0.3s;
 }
 
 @keyframes movebox {
-  0% {
-    left: 0%;
-  }
-  100% {
-    left: calc(100% - 10px);
-  }
-}
-.animation-movebox2, .area.-stage2 .sequence_bar_movebox, .area.-stage3 .sequence_bar_movebox {
-  animation: movebox 5.2s cubic-bezier(0.45, 0.19, 0.17, 1) alternate infinite 0.3s;
-}
-
-@keyframes movebox2 {
   0% {
     left: 0%;
   }
@@ -389,6 +438,13 @@ body {
 .result_text {
   font-size: 16px;
   font-weight: bold;
+}
+
+.wrap {
+  position: relative;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*# sourceMappingURL=/SequenceGame.e31bb0bc.css.map */

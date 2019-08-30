@@ -1,0 +1,108 @@
+.stage2{
+    transition: all .6s;
+    .circle{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100px;
+        height: 200px;
+        line-height: 200px;
+        border-radius: 99px;
+        color: orange;
+        border: 30px double;
+        border-top: 0;
+        border-bottom: 0;
+        @extend .animation-geometry;
+        &.-is-second{
+            color: #0198F1;
+            margin: 0 auto;
+            position: absolute;
+            width: 80px;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: all .6s;
+            @extend .animation-geometry-second;
+        }
+        &.-is-third{
+            color: #D62226;
+            margin: 0 auto;
+            position: absolute;
+            width: 50px;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: all .6s;
+            @extend .animation-geometry-third;
+        }
+    }
+    // .circle{
+    //     position: relative;
+    //     margin-top: 100px;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    //     width: 200px;
+    //     height: 200px;
+    //     line-height: 200px;
+    //     border-radius: 50%;
+    //     color: orange;
+    //     border: 1px dotted;
+    //     // @extend .animation-geometry;
+    // }
+}
+/*
+* mova-box pattern
+*/
+.animation-geometry{
+    animation: geometry .8s ease alternate infinite .3s;
+}
+@keyframes geometry {
+    0%{
+        width: 100px;
+    }
+    100%{
+        width: 200px;
+    }
+}
+
+.animation-geometry-second{
+    animation: geometry-second .5s ease alternate infinite .3s;
+}
+@keyframes geometry-second {
+    0%{
+        width: 80px;
+    }
+    100%{
+        width: 125px;
+    }
+}
+
+.animation-geometry-third{
+    animation: geometry-third 1s ease alternate infinite .3s;
+}
+@keyframes geometry-third {
+    0%{
+        width: 50px;
+    }
+    100%{
+        width: 75px;
+    }
+}
+
+
+.js-content.-is-clear{
+    .stage2{
+        transition: all .6s;
+        .circle{
+            width: 200px;
+            transition: all .6s;
+            &.-is-second{
+                width: 125px;
+                transition: all .6s;
+            }
+            &.-is-third{
+                width: 75px;
+                transition: all .6s;
+            }
+        }
+    }
+}

@@ -2,30 +2,16 @@ html
     head
         meta#viewport(content='width=device-width', name='viewport')
         <link href="https://fonts.googleapis.com/css?family=Shojumaru&display=swap" rel="stylesheet">
-        body
+        body.overlay
             .main
-                //- img.icon-gear.-is-lt(src='./img/icon-gear.png', alt='歯車 ')
-                //- img.icon-gear.-is-lb(src='./img/icon-gear.png', alt='歯車')
-                //- img.icon-gear.-is-rt(src='./img/icon-gear.png', alt='歯車')
-                //- img.icon-gear.-is-rb(src='./img/icon-gear.png', alt='歯車')
                 header.header
                     .header_inner
                         h1.header_title ProgressbarGame
                 .sidebar.-is-left
                 .sidebar.-is-right
                 .content
-                    .content_inner
-                        .js-content
-                            .stage1
-                                .circle
-                                    .ball
-                                .circle.-is-second
-                                    .ball.-is-second
-                                .circle.-is-third
-                                    .ball.-is-third
-                footer.footer
                     .area.-stage1
-                        .score stage 1/10
+                        .score stage 1/3
                         .sequence
                             .result
                                 .result_text
@@ -35,12 +21,12 @@ html
                             .box
                                 .stopBox STOP!!!
                                 .startBox(style="display:none") START!!!
-                    //- .footer_inner
-                    //-     h1.footer_title ProgressbarGame
-                    //-     ul.listSns
-                    //-         li.listSns_item
-                    //-             a(href='https://twitter.com/RinstarskyKujat', target='_blank') Twitter
-                    //-         li.listSns_item
-                    //-             a(href='https://github.com/TakuyaTaniguchi/SequenceGame', target='_blank') Github
-
+                footer.footer
+                    .footer_inner
+                        h1.footer_title ProgressbarGame
+                        ul.listSns
+                            li.listSns_item
+                                a(href='https://twitter.com/RinstarskyKujat', target='_blank') Twitter
+                            li.listSns_item
+                                a(href='https://github.com/TakuyaTaniguchi/SequenceGame', target='_blank') Github
             script(src="./index.js")

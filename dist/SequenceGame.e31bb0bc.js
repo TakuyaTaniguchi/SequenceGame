@@ -201,6 +201,7 @@ require("./style.scss");
 /**
  * JavaScript
  */
+var body = document.querySelector('body');
 var area = document.querySelector('.area');
 var stopBox = area.querySelector('.stopBox');
 var startBox = area.querySelector('.startBox');
@@ -208,7 +209,6 @@ var moveBox = area.querySelector('.sequence_bar_movebox');
 var hitbox = area.querySelector('.sequence_bar_hitbox');
 var resultTextEl = area.querySelector('.result_text');
 var score = area.querySelector('.score');
-var jsContent = document.querySelector('.js-content');
 var countStage = 1; //hitboxのサイズを取得
 
 var clearArea = hitbox.offsetLeft;
@@ -241,16 +241,14 @@ var nextStage = function nextStage(countStage) {
   var nextStageCount = countStage;
   setTimeout(function () {
     area.classList.add("-stage".concat(nextStageCount));
-    score.textContent = "stage".concat(nextStageCount, "/10");
+    score.textContent = "stage".concat(nextStageCount, "/3");
   }, 1500);
 };
 
 var resetGame = function resetGame(countStage) {
   var prevStageCount = countStage - 1;
   resultTextEl.textContent = '';
-  area.classList.remove("-stage".concat(prevStageCount)); //aaa
-
-  jsContent.classList.remove('-is-clear');
+  area.classList.remove("-stage".concat(prevStageCount));
 };
 
 stopBox.addEventListener('click', function (event) {
@@ -264,7 +262,7 @@ stopBox.addEventListener('click', function (event) {
   if (clearJudgeBool) {
     resultTextEl.textContent = 'Clear'; //aaaaa
 
-    jsContent.classList.add('-is-clear');
+    body.classList.add('-is-clear');
     countStage++;
     setTimeout(function () {
       resetGame(countStage);
@@ -306,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65275" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52584" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

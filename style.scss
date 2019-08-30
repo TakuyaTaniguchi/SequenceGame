@@ -1,11 +1,41 @@
 @import '/soruce/reset.scss';
 @import './asset/stage1';
+@import './asset/stage2';
 body{
   background-color: #00818a;
   font-family: 'Shojumaru', cursive;
   background-color: #F8FFE8;
   // border-left: solid 50px #59C3C3;
   // border-right: solid 50px #59C3C3;
+}
+
+.overlay{
+  position: relative;
+  &.-is-clear{
+    &::before{
+      content: "CLEAR!!!";
+      display: block;
+      font-size: 100px;
+      opacity: 1;
+      z-index: 1;
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.7;
+      background-color: #000;
+    }
+  }
 }
 /* header
 ----------------------- */
@@ -60,10 +90,12 @@ body{
 ----------------------- */
 
 .content{
+  display: flex;
+  align-items: center;
   width: calc(100% - 100px);
   margin-left: auto;
   margin-right: auto;
-  height: calc(100vh - 400px);
+  height: calc(100vh - 160px);
 }
 
 /* listSns
@@ -99,12 +131,12 @@ body{
     }
     &.-stage2{
       .sequence_bar_movebox{
-        @extend .animation-movebox2;
+        @extend .animation-movebox;
       }
     }
     &.-stage3{
       .sequence_bar_movebox{
-        @extend .animation-movebox2;
+        @extend .animation-movebox;
       }
     }
     &.-is-stop{
@@ -155,21 +187,9 @@ body{
   * mova-box pattern
   */
   .animation-movebox{
-      animation: movebox 5.2s ease alternate infinite .3s;
+      animation: movebox 2s ease alternate infinite .3s;
   }
   @keyframes movebox {
-      0%{
-      left: 0%
-      }
-      100%{
-      left: calc(100% - 10px);
-      }
-  }
-
-  .animation-movebox2{
-      animation: movebox 5.2s cubic-bezier(0.450, 0.190, 0.170, 1) alternate infinite .3s;
-  }
-  @keyframes movebox2 {
       0%{
       left: 0%
       }
@@ -213,4 +233,10 @@ body{
       font-size: 16px;
       font-weight: bold;
     }
+  }
+  .wrap{
+    position: relative;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
   }
