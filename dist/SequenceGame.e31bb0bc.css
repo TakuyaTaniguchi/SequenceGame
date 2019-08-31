@@ -348,7 +348,7 @@ body {
     left: calc(100% - 10px);
   }
 }
-.animation-movebox3, .area.-stage3 .sequence_bar_movebox3 {
+.animation-movebox3, .area.-stage3 .sequence_bar_movebox {
   animation: movebox3 2.2s cubic-bezier(0.895, 0.03, 0.685, 0.22) alternate infinite 0.3s;
 }
 
