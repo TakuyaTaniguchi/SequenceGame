@@ -6,7 +6,7 @@ import "./style.scss";
 /**
  * JavaScript
  */
-const body = document.querySelector('body');
+const body = document.querySelector('.overlay');
 const area = document.querySelector('.area');
 const stopBox = area.querySelector('.stopBox');
 const startBox = area.querySelector('.startBox');

@@ -14,6 +14,5 @@ yarn build
 in Development
 
 赤いバーが白いエリアと重なるとクリア  
-全部で10ステージ作る予定です。  
-CSSアニメーションの勉強のために作っています。  
+全部で3ステージ  
 <img src="./soruce/game.png">

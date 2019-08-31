@@ -201,7 +201,7 @@ require("./style.scss");
 /**
  * JavaScript
  */
-var body = document.querySelector('body');
+var body = document.querySelector('.overlay');
 var area = document.querySelector('.area');
 var stopBox = area.querySelector('.stopBox');
 var startBox = area.querySelector('.startBox');
