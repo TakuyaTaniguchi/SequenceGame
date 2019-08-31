@@ -50,13 +50,18 @@ const nextStage = (countStage) => {
     setTimeout(function(){
         area.classList.add(`-stage${nextStageCount}`);
         score.textContent = `stage${nextStageCount}/3`;
-    },1500)
+        body.classList.remove('-is-clear')
+    },1000)
 }
 
 const resetGame = (countStage) => {
     let prevStageCount = countStage - 1;
     resultTextEl.textContent = '';
     area.classList.remove(`-stage${prevStageCount}`);
+}
+
+const CongratulationsGame = () =>{
+    body.classList.add('-is-Congratulations');
 }
 
 stopBox.addEventListener('click',(event)=>{
@@ -67,15 +72,19 @@ stopBox.addEventListener('click',(event)=>{
     const moveBoxRight = moveBox.offsetLeft + moveBox.clientWidth;
     const clearJudgeBool = clearJudge(clearArea,clearAreaEnd,moveBoxLeft,moveBoxRight);
     if(clearJudgeBool){
-        resultTextEl.textContent = 'Clear';
-        //aaaaa
-        body.classList.add('-is-clear')
-
         countStage++;
-        setTimeout(function(){
-            resetGame(countStage);
-            nextStage(countStage);
-        },1000)
+
+        resultTextEl.textContent = 'Clear';
+        //CLEAREフラグ
+        body.classList.add('-is-clear')
+        if(countStage === 4){
+            CongratulationsGame();
+        }else{
+            setTimeout(function(){
+                resetGame(countStage);
+                nextStage(countStage);
+            },500)
+        }
     }else{
         resultTextEl.textContent = 'Failed';
     }

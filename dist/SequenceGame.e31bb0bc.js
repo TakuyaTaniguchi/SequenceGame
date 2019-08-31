@@ -242,13 +242,18 @@ var nextStage = function nextStage(countStage) {
   setTimeout(function () {
     area.classList.add("-stage".concat(nextStageCount));
     score.textContent = "stage".concat(nextStageCount, "/3");
-  }, 1500);
+    body.classList.remove('-is-clear');
+  }, 1000);
 };
 
 var resetGame = function resetGame(countStage) {
   var prevStageCount = countStage - 1;
   resultTextEl.textContent = '';
   area.classList.remove("-stage".concat(prevStageCount));
+};
+
+var CongratulationsGame = function CongratulationsGame() {
+  body.classList.add('-is-Congratulations');
 };
 
 stopBox.addEventListener('click', function (event) {
@@ -260,14 +265,19 @@ stopBox.addEventListener('click', function (event) {
   var clearJudgeBool = clearJudge(clearArea, clearAreaEnd, moveBoxLeft, moveBoxRight);
 
   if (clearJudgeBool) {
-    resultTextEl.textContent = 'Clear'; //aaaaa
+    countStage++;
+    resultTextEl.textContent = 'Clear'; //CLEAREフラグ
 
     body.classList.add('-is-clear');
-    countStage++;
-    setTimeout(function () {
-      resetGame(countStage);
-      nextStage(countStage);
-    }, 1000);
+
+    if (countStage === 4) {
+      CongratulationsGame();
+    } else {
+      setTimeout(function () {
+        resetGame(countStage);
+        nextStage(countStage);
+      }, 500);
+    }
   } else {
     resultTextEl.textContent = 'Failed';
   }

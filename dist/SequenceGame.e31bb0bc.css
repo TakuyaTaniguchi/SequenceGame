@@ -136,97 +136,6 @@ input[type=submit], input[type=text], textarea {
   *zoom: 1;
 }
 
-.stage2 {
-  transition: all 0.6s;
-}
-.stage2 .circle {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100px;
-  height: 200px;
-  line-height: 200px;
-  border-radius: 99px;
-  color: orange;
-  border: 30px double;
-  border-top: 0;
-  border-bottom: 0;
-}
-.stage2 .circle.-is-second {
-  color: #0198F1;
-  margin: 0 auto;
-  position: absolute;
-  width: 80px;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: all 0.6s;
-}
-.stage2 .circle.-is-third {
-  color: #D62226;
-  margin: 0 auto;
-  position: absolute;
-  width: 50px;
-  top: 0;
-  left: 0;
-  right: 0;
-  transition: all 0.6s;
-}
-
-/*
-* mova-box pattern
-*/
-.animation-geometry, .stage2 .circle {
-  animation: geometry 0.8s ease alternate infinite 0.3s;
-}
-
-@keyframes geometry {
-  0% {
-    width: 100px;
-  }
-  100% {
-    width: 200px;
-  }
-}
-.animation-geometry-second, .stage2 .circle.-is-second {
-  animation: geometry-second 0.5s ease alternate infinite 0.3s;
-}
-
-@keyframes geometry-second {
-  0% {
-    width: 80px;
-  }
-  100% {
-    width: 125px;
-  }
-}
-.animation-geometry-third, .stage2 .circle.-is-third {
-  animation: geometry-third 1s ease alternate infinite 0.3s;
-}
-
-@keyframes geometry-third {
-  0% {
-    width: 50px;
-  }
-  100% {
-    width: 75px;
-  }
-}
-.js-content.-is-clear .stage2 {
-  transition: all 0.6s;
-}
-.js-content.-is-clear .stage2 .circle {
-  width: 200px;
-  transition: all 0.6s;
-}
-.js-content.-is-clear .stage2 .circle.-is-second {
-  width: 125px;
-  transition: all 0.6s;
-}
-.js-content.-is-clear .stage2 .circle.-is-third {
-  width: 75px;
-  transition: all 0.6s;
-}
-
 body {
   background-color: #00818a;
   font-family: "Shojumaru", cursive;
@@ -237,18 +146,41 @@ body {
   position: relative;
 }
 .overlay.-is-clear::before {
-  content: "CLEAR!!!";
+  content: "Clear!!";
   display: block;
   font-size: 100px;
   opacity: 1;
   z-index: 1;
   color: #fff;
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 .overlay.-is-clear::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+  background-color: #000;
+}
+.overlay.-is-Congratulations::before {
+  content: "Congratulations!!";
+  display: block;
+  font-size: 100px;
+  opacity: 1;
+  z-index: 1;
+  color: #fff;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.overlay.-is-Congratulations::after {
   content: "";
   position: absolute;
   display: block;
@@ -328,7 +260,7 @@ body {
   align-items: center;
   margin-left: auto;
   position: absolute;
-  top: 25px;
+  top: 35px;
   right: 125px;
 }
 .listSns_item {
@@ -392,11 +324,35 @@ body {
 /*
 * mova-box pattern
 */
-.animation-movebox, .area.-stage1 .sequence_bar_movebox, .area.-stage2 .sequence_bar_movebox, .area.-stage3 .sequence_bar_movebox {
+.animation-movebox, .area.-stage1 .sequence_bar_movebox {
   animation: movebox 2s ease alternate infinite 0.3s;
 }
 
 @keyframes movebox {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: calc(100% - 10px);
+  }
+}
+.animation-movebox2, .area.-stage2 .sequence_bar_movebox {
+  animation: movebox2 2.2s cubic-bezier(0.39, 0.575, 0.565, 1) alternate infinite 0.3s;
+}
+
+@keyframes movebox2 {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: calc(100% - 10px);
+  }
+}
+.animation-movebox3, .area.-stage3 .sequence_bar_movebox3 {
+  animation: movebox3 2.2s cubic-bezier(0.895, 0.03, 0.685, 0.22) alternate infinite 0.3s;
+}
+
+@keyframes movebox3 {
   0% {
     left: 0%;
   }
